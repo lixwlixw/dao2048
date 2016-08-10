@@ -3,7 +3,7 @@ ENV TIME_ZONE=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TIME_ZONE /etc/localtime && echo $TIME_ZONE > /etc/timezone
 RUN sed -i "s/archive.ubuntu.com/mirrors.aliyun.com/g" /etc/apt/sources.list
 RUN apt-get update
-RUN apt-get install -y nginx zip curl
+RUN apt-get install -y nginx zip wget
 
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 RUN wget -O /usr/share/nginx/www/master.zip https://s3.cn-north-1.amazonaws.com.cn/2048/2048-master.zip
