@@ -6,7 +6,7 @@ RUN apt-get update
 RUN apt-get install -y nginx zip wget
 
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
-COPY 2048-master.zip /usr/share/nginx/www/2048-master.zip
+COPY 2048-master.zip /usr/share/nginx/www/master.zip
 RUN cd /usr/share/nginx/www/ && unzip master.zip && mv 2048-master/* . && rm -rf 2048-master master.zip
 
 EXPOSE 80
